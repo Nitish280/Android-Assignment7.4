@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         nextActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {//here we are creating the onclick method
+                //here we are creating the String
+                String userNameVal = username.getText().toString();
+                String passwordVal = password.getText().toString();
+                if(userNameVal.equals("Nitish") && passwordVal.equals("123")) {
                 //here we are creating the bundle
                 //for passing the data from one activity to another activity
                 Bundle bundle = new Bundle();
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtras(bundle);
                 //here we are starting the activity
                 startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(),"Wrong password",Toast.LENGTH_LONG).show();
 
             }
         });
